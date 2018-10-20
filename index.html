@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Discord-Log Analyzer</title>
+
+    <script src="http://requirejs.org/docs/release/2.3.2/minified/require.js"></script>
+    <script>
+        require(['node_modules/excellentexport/dist/excellentexport'], function(ee) {
+            window.ExcellentExport = ee;
+        });
+    </script>
+
+    <script src="scripts/WORDLIST.js"></script>
+    <script src="scripts/user.js"></script>
+    <script src="scripts/SAVEFILE.js"></script>
+    <script src="scripts/analyze.js"></script>
+
+
+</head>
+<body>
+    <input type="file" id="FileInput">
+
+    <button onclick="download(getData(';'), getFilename(),'text/csv' )">Download German</button>
+    <button onclick="download(getData(','), getFilename(),'text/csv' )">Download American</button>
+
+    <button onclick="multiDownload()">Download Multifile</button>
+<section id="output">
+
+</section>
+</body>
+</html>
